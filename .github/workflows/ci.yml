@@ -10,8 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          # Need to fetch entire commit history to
-          # analyze every commit since last release
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
