@@ -1,4 +1,5 @@
 /* eslint-disable no-template-curly-in-string */
+
 const preset = 'conventionalcommits';
 
 module.exports = {
