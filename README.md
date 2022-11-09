@@ -24,12 +24,11 @@
     - [Why not use `"prerelease": true`?](#why-not-use-prerelease-true)
   - [Minimal GitHub Release workflow](#minimal-github-release-workflow)
     - [If you're unable to make it work chances are your issue is documented in the `semantic-release` troubleshooting docs](#if-youre-unable-to-make-it-work-chances-are-your-issue-is-documented-in-the-semantic-release-troubleshooting-docs)
-  - [Opinionated GitHub Release workflow](#opinionated-github-release-workflow)
 
 # Usage
 
 ```bash
-npm i -D @netly/semantic-release-preset
+npm i -D @netly/semantic-release-config
 ```
 
 <details>
@@ -38,11 +37,11 @@ npm i -D @netly/semantic-release-preset
 There's a [convention](https://github.com/semantic-release/gitlab-config#install) in `semantic-release` presets to have it as a peer, which would make the install setup look like this:
 
 ```bash
-npm install --save-dev semantic-release @netly/semantic-release-preset
+npm install --save-dev semantic-release @netly/semantic-release-config
 ```
 
 This leaves it to you to keep both dependencies up to date. This package is primarily designed to ease our own internal `@netly` npm packages, and thus we prefer for it to be a single dependency.
-That way we avoid mismatch bugs where bots might make a PR that updates `semantic-release` to a new, breaking, major version. But fail to also update `@netly/semantic-release-preset` causing it to fail.
+That way we avoid mismatch bugs where bots might make a PR that updates `semantic-release` to a new, breaking, major version. But fail to also update `@netly/semantic-release-config` causing it to fail.
 
 By declaring it as a normal `dependency` we avoid these issues, and reduce churn and PR noise.
 
@@ -54,8 +53,8 @@ Create a `.releaserc.json`:
 
 ```json
 {
-  "extends": "@netly/semantic-release-preset",
-  "branches": ["main"]
+  "extends": "@netly/semantic-release-config",
+  "branches": ["main", "master"]
 }
 ```
 
@@ -79,7 +78,7 @@ Then use this config:
 
 ```json
 {
-  "extends": "@netly/semantic-release-preset",
+  "extends": "@netly/semantic-release-config",
   "branches": [
     "main",
     { "name": "v3", "channel": "dev-preview", "prerelease": true }
@@ -109,7 +108,7 @@ To run that setup use:
 
 ```json
 {
-  "extends": "@netly/semantic-release-preset",
+  "extends": "@netly/semantic-release-config",
   "branches": [
     { "name": "studio-v2", "channel": "latest" },
     { "name": "main", "channel": "studio-v3", "prerelease": "v3-studio" }
@@ -161,8 +160,9 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --no-audit --prefer-offline
       - run: npm test --if-present
+      - run: npm run lint --if-present
       # Branches that will release new versions are defined in .releaserc.json
       # @TODO uncomment after verifying with --dry-run we're ready to go
       # - run: npx semantic-release
@@ -208,8 +208,9 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --no-audit
       - run: npm test --if-present
+      - run: npm run lint --if-present
       # Branches that will release new versions are defined in .releaserc.json
       - run: npx semantic-release
         env:
@@ -234,10 +235,3 @@ git push
 ```
 
 Check the [Release Workflow docs](https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow) for more information.
-
-## Opinionated GitHub Release workflow
-
-1. This flow runs a `build` task for linting and things that only need to run once.
-2. Runs `test`, which runs a matrix of operating systems and Node.js versions.
-3. FInally, runs `release`, if the workflow started from a `workflow_dispatch`, it is skipped on `push`.
-

@@ -28,6 +28,8 @@
   "devDependencies": {
     "@netly/eslint-config-base": "^1.0.0",
     "@netly/prettier-config": "^1.0.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "prettier": "^2.7.1"
   },
   "homepage": "https://github.com/dmytromysak/semantic-release-config",
@@ -35,7 +37,7 @@
     "url": "https://github.com/dmytromysak/semantic-release-config/issues"
   },
   "prettier": "@netly/prettier-config",
-  "author": "Dmytro Mysa <dmytro.mysak@gmail.com>",
+  "author": "Dmytro Mysak <dmytro.mysak@gmail.com>",
   "keywords": [
     "changelog",
     "git",
