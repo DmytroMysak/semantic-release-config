@@ -4,11 +4,12 @@
   "description": "Sharable configuration for semantic-release, extends experience for publishing to NPM & Github: generates release-notes, changelog, publishes new version with Github actions.",
   "main": "index.js",
   "files": [
-    "CHANGELOG.md",
-    "index.js"
+    "index.js",
+    "README.md"
   ],
   "scripts": {
     "cz": "cz",
+    "update": "ncu -u",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
@@ -26,11 +27,9 @@
     "semantic-release-license": "^1.0.3"
   },
   "devDependencies": {
-    "@netly/eslint-config-base": "^1.0.0",
-    "@netly/prettier-config": "^1.0.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "prettier": "^2.7.1"
+    "@netly/eslint-config-base": "^1.0.2",
+    "@netly/prettier-config": "^1.1.0",
+    "npm-check-updates": "^16.4.1"
   },
   "homepage": "https://github.com/dmytromysak/semantic-release-config",
   "bugs": {
