@@ -13,23 +13,23 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.1",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.6",
-    "@semantic-release/npm": "^9.0.1",
-    "@semantic-release/release-notes-generator": "^10.0.3",
-    "conventional-changelog": "^3.1.25",
-    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.4",
+    "@semantic-release/release-notes-generator": "^11.0.4",
+    "conventional-changelog": "^4.0.0",
+    "conventional-changelog-conventionalcommits": "^6.1.0",
     "cz-conventional-changelog": "^3.3.0",
-    "semantic-release": "^19.0.5",
+    "semantic-release": "^21.0.7",
     "semantic-release-license": "^1.0.3"
   },
   "devDependencies": {
-    "@netly/eslint-config-base": "^1.0.2",
-    "@netly/prettier-config": "^1.1.0",
-    "npm-check-updates": "^16.4.1"
+    "@netly/eslint-config-base": "^1.1.2",
+    "@netly/prettier-config": "^1.2.0",
+    "npm-check-updates": "^16.10.17"
   },
   "homepage": "https://github.com/dmytromysak/semantic-release-config",
   "bugs": {

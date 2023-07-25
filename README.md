@@ -37,7 +37,7 @@ npm i -D @netly/semantic-release-config
 There's a [convention](https://github.com/semantic-release/gitlab-config#install) in `semantic-release` presets to have it as a peer, which would make the install setup look like this:
 
 ```bash
-npm install --save-dev semantic-release @netly/semantic-release-config
+npm install -D @netly/semantic-release-config
 ```
 
 This leaves it to you to keep both dependencies up to date. This package is primarily designed to ease our own internal `@netly` npm packages, and thus we prefer for it to be a single dependency.
