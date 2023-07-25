@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/DmytroMysak/semantic-release-config/compare/v1.0.2...v1.0.3) (2023-07-25)
+
+### Bug Fixes
+
+- fixed package vulnerabilities ([ce78966](https://github.com/DmytroMysak/semantic-release-config/commit/ce78966203c6092e20a5032570c0b5cef2f11697))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [1.0.2](https://github.com/DmytroMysak/semantic-release-config/compare/v1.0.1...v1.0.2) (2022-11-09)
 
 ### Bug Fixes
